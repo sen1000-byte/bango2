@@ -17,46 +17,48 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
+
     var name:[String] = ["いち","にい","さん","しい","ごお"]
     var indent: Int = 0
     
+    func print() {
+        numberLabel.text = "\(indent)ばんめ"
+        nameLabel.text = name[indent]
+    }
+    
     @IBAction func first() {
         indent = 0
-        nameLabel.text = name[indent]
-        numberLabel.text = "\(indent)ばんめ"
+        print()
     }
     
     @IBAction func second() {
         indent = 1
-        nameLabel.text = name[indent]
-        numberLabel.text = "\(indent)ばんめ"
+        print()
     }
     
     @IBAction func third() {
         indent = 2
-        nameLabel.text = name[indent]
-        numberLabel.text = "\(indent)ばんめ"
+        print()
     }
     
     @IBAction func next(){
-        if indent < 5 {
+        if indent < 4 {
             indent = indent + 1
-            nameLabel.text = name[indent]
-            numberLabel.text = "\(indent)ばんめ"
         }else{
             indent = 0
-            nameLabel.text = name[indent]
-            numberLabel.text = "\(indent)ばんめ"
         }
+        print()
     }
     
     @IBAction func back() {
         if indent != 0 {
             indent = indent - 1
+        }else {
+            indent = 4
         }
+        print()
     }
-
+    
 
 
 }
